@@ -1,0 +1,22 @@
+fun main(args: Array<String>) {
+    var s1: Son = Son.小骡子() //因为Son中用了关键字sealed,所以这里不能直接实例化Son()
+    //Son属于印章类型的，没有构造方法，不可以被初始化出来
+
+    var s2: Son = Son.小小驴()
+
+    var s3: Son = Son.小小驴()
+
+    var list = listOf<Son>(s1,s2,s3)
+
+    for (v in list)
+        if (v is Son.小小驴){  //小小驴会打印两个，如果是小骡子会打印一个
+            v.sayHello()
+        }
+
+}
+
+/*Sealed class 子类类型有限的class
+印章类和枚举类类似但也有区别
+* Sealed class 更在意类型，
+* 枚举更在意数据
+* */
