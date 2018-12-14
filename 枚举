@@ -1,0 +1,8 @@
+enum class Week{   //枚举 enum 一一列举
+    星期一,星期二,星期三,星期四,星期五,星期六,星期日
+
+}
+
+fun main(args: Array<String>) {
+    println(Week.星期日.ordinal)   //ordinal指顺序，和java里面的脚标类似
+}
